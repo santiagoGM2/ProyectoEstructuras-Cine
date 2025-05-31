@@ -1,0 +1,86 @@
+{
+  "databases": [
+    {
+      "name": "cineDB",
+      "collections": [
+        {
+          "name": "Funcion",
+          "fields": [
+            { "name": "idPelicula", "type": "int", "required": true },
+            { "name": "hora", "type": "string", "required": true },
+            { "name": "dia", "type": "int", "required": true },
+            { "name": "mes", "type": "int", "required": true },
+            { "name": "año", "type": "int", "required": true },
+            { "name": "dimension", "type": "string", "required": true },
+            { "name": "doblaje", "type": "string", "required": true },
+            {
+              "name": "sillas",
+              "type": "array",
+              "items": { "type": "objectId", "ref": "Silla" }
+            }
+          ]
+        },
+        {
+          "name": "Orden",
+          "fields": [
+            {
+              "name": "usuario",
+              "type": "objectId",
+              "ref": "Usuario",
+              "required": true
+            },
+            {
+              "name": "sillas",
+              "type": "array",
+              "items": { "type": "objectId", "ref": "Silla" }
+            },
+            {
+              "name": "productos",
+              "type": "array",
+              "items": { "type": "objectId", "ref": "Producto" }
+            }
+          ]
+        },
+        {
+          "name": "Producto",
+          "fields": [
+            { "name": "img", "type": "string", "required": true },
+            { "name": "name", "type": "string", "required": true },
+            { "name": "precio", "type": "string", "required": true }
+          ]
+        },
+        {
+          "name": "Silla",
+          "fields": [
+            {
+              "name": "orden",
+              "type": "objectId",
+              "ref": "Orden",
+              "required": true
+            },
+            {
+              "name": "funcion",
+              "type": "objectId",
+              "ref": "Funcion",
+              "required": true
+            },
+            { "name": "estado", "type": "boolean", "required": true },
+            { "name": "precio", "type": "number", "required": true }
+          ]
+        },
+        {
+          "name": "Usuario",
+          "fields": [
+            { "name": "email", "type": "string", "required": true, "unique": true },
+            { "name": "password", "type": "string", "required": true },
+            {
+              "name": "orden",
+              "type": "objectId",
+              "ref": "Orden"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

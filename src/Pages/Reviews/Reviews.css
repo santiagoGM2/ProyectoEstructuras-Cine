@@ -1,0 +1,140 @@
+/* Contenedor principal de las reviews */
+.reviewsContainer {
+    width: 80%;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  /* Título principal */
+  .reviewsContainer h1 {
+    text-align: center;
+    color: #333;
+    font-size: 2rem;
+    margin-bottom: 30px;
+  }
+  
+  /* Contenedor de las reviews individuales en formato grid */
+  .reviewsList {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Tres columnas de igual tamaño */
+    gap: 20px; /* Espacio entre las tarjetas */
+    justify-items: center; /* Alineación horizontal de las tarjetas */
+    margin-top: 20px;
+    width: 100%; /* Hace que el grid ocupe todo el ancho disponible */
+  }
+  
+  /* Estilo para cada tarjeta de review */
+  .reviewCard {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    width: 400px; /* Establece un ancho fijo para las tarjetas */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 220px;
+    color: #444;
+    overflow: hidden; /* Para evitar que el contenido sobresalga */
+  }
+  
+  /* Efecto hover en las tarjetas de review */
+  .reviewCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* Título de la película */
+  .reviewCard h3 {
+    font-size: 1.4rem;
+    color: #007bff;
+    margin-bottom: 15px;
+    font-weight: bold;
+    text-align: center;
+    word-wrap: break-word; /* Evita que el título se salga de la tarjeta */
+  }
+  
+  /* Contenido de la review (comentario) */
+  .reviewCard p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.5;
+    text-align: justify;
+    margin: 0;
+    flex-grow: 1; /* Asegura que el contenido tome el espacio disponible */
+    word-wrap: break-word; /* Evita que el contenido se desborde */
+  }
+  
+  /* Estilo para el mensaje de carga */
+  .reviewsContainer p {
+    font-size: 1.1rem;
+    text-align: center;
+    color: #888;
+  }
+  
+  /* Estilo para los mensajes de error */
+  .error {
+    color: red;
+    text-align: center;
+    font-size: 1.1rem;
+  }
+  
+  /* Estilo para el mensaje cuando no hay reviews */
+  .reviewsContainer p {
+    font-size: 1.1rem;
+    text-align: center;
+    color: #888;
+    font-style: italic;
+  }
+  
+  /* Estilo para los enlaces */
+  a {
+    color: #007bff; /* Color azul para los enlaces */
+    text-decoration: none; /* Sin subrayado por defecto */
+  }
+  
+  a:hover {
+    text-decoration: underline; /* Subrayado al pasar el mouse sobre el enlace */
+    color: #0056b3; /* Cambio de color al pasar el mouse */
+  }
+  
+  /* Diseño responsivo para pantallas más pequeñas */
+  @media (max-width: 768px) {
+    .reviewsContainer {
+      width: 95%;
+    }
+  
+    .reviewCard {
+      padding: 15px;
+      height: auto; /* Permite que la tarjeta se ajuste a contenido más largo */
+    }
+  
+    .reviewCard h3 {
+      font-size: 1.2rem;
+    }
+  
+    .reviewCard p {
+      font-size: 0.9rem;
+      margin: 1px;
+    }
+  
+    .reviewsList {
+      grid-template-columns: 1fr 1fr; /* Dos columnas en pantallas más pequeñas */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .reviewsList {
+      grid-template-columns: 1fr; /* Una columna en pantallas muy pequeñas */
+    }
+  }
+  
