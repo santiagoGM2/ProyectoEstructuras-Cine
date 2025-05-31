@@ -31,4 +31,3 @@ export const useForm = (initialState = {}) => {
         onResetPasswd
     }
 }
-
