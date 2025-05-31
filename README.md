@@ -1,5 +1,5 @@
-# CineCine
+# CineDeLocos
 
-Proyecto Creado A Ultima Hora by Penachozz
+Link del figma:
+Link de la pagina:
 
-Este proyecto es una implementacion de lo aprendido en el curso, creare una pagina de cine inspirada en CineColombia
